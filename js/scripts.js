@@ -5,11 +5,11 @@ function Ticket(title, time, age) {
   this.userAge = age;
 }
 
-Ticket.prototype.calculatorPrice = function() {
+Ticket.prototype.calculatePrice = function() {
   var ticketPrice = 0;
   if (this.userMovie === "Toy Story 4") {
-    ticketPrice += 3; {
-    } else if (this.userMovie === "Anabel Comes Home")
+    ticketPrice += 3; 
+  } else if (this.userMovie === "Anabel Comes Home") {
     ticketPrice += 2;
   } else {
     ticketPrice += 1;
@@ -41,7 +41,7 @@ $(document).ready(function() {
     var newTicket = new Ticket(inputTitle, inputTime, inputAge);
 
     $(".output").show();
-    $("#showTime").text(inputTitle);
+    $("#showTime").text(inputTime);
     $("#showTitle").text(inputTitle);
     $("#showPrice").text(newTicket.calculatePrice());
   });
