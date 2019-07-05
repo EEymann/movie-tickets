@@ -28,3 +28,22 @@ Ticket.prototype.calculatorPrice = function() {
   }
   return ticketPrice;
 }
+
+//user interface logic
+$(document).ready(function() {
+
+  $("form").submit(function(event){
+    event.preventDefault();
+
+    var inputTitle = $("#movie-title").val();
+    var inputTime = $("#movie-time").val();
+    var inputAge = $("#age-range").val();
+    var newTicket = new Ticket(inputTitle, inputTime, inputAge);
+
+    $(".output").show();
+    $("#showTime").text(inputTitle);
+    $("#showTitle").text(inputTitle);
+    $("#showPrice").text(newTicket.calculatePrice());
+  });
+
+});
